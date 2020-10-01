@@ -1,0 +1,311 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system,Arial, Helvetica, sans-serif;
+    color: white;   
+    overflow: hidden; 
+}
+
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: rgb(23, 22, 22);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: opacity 0.3s linear;
+  }
+
+.loaded{
+    display: none;
+    z-index: -2;
+}
+
+.bgImage{
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: fadeIn .5s linear;
+}
+
+.top-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-end;
+    margin-top: 1%;
+}
+
+.top-right {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+}
+
+.weather-top, .weather-bottom {
+    display: flex;
+    flex-direction: row;
+}
+
+.weather-top>.temperature {
+    margin-top: 3px;
+    margin-left:5px;
+    font-size: 30px;
+}
+.weather-bottom {
+    margin: 0 auto;
+}
+
+
+.greeting-container {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}    
+
+.naming-item,
+.greeting-item {
+    display: none;
+    font-size: 2.9em;
+}    
+
+/* 캐스캐이딩으로 display: none 무시 */
+.showing {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: auto;
+    margin-top: 0;
+}    
+
+
+
+.clock-contaniner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: rgba( 255, 255, 255, 0.9);
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+}
+
+.clock-item { 
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    letter-spacing: -0.03em;
+    font-size: 7em;
+    width: auto;
+}
+
+.center-above {
+    height: 5%;
+}
+
+.center-wrap {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+}
+
+.left-side {
+    display: flex;
+    flex:1 1 50%;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.right-side {
+    display: flex;
+    flex:1 1 50%;
+    flex-direction: column;
+    border: 0.01em;
+    height: 100%;
+}
+
+
+.todo-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 10%;
+}
+
+
+.daily, .delayed {
+    flex: 1 1 50%;
+    margin-top: 5%;
+    color: white;
+    background-color: white;
+    background-color: rgba( 255, 255, 255, 0.4 );
+    border-radius : 8px;
+}
+
+.todo-container * h1 {
+    margin: 5%;
+}
+
+.todo-container * h1, .daily>span {
+    margin-bottom: 0;
+}
+
+.daily>h1, .daily>span {
+    display:inline-block;
+}
+
+.daily>span {
+    color: #9be4b6;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+.todo-container * li {
+    display:flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+
+.todo-container * li > .value {
+    margin-right: 0.5em;
+    font-size: 120%;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+}
+
+.todo-container * li > button {
+    /* font-size: 5%; */
+    flex: 0 1 auto;
+    margin: 0.5em 0.25em 0;
+    width: 1em;
+    height: 1em;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0.01em 0.02em 0 rgba(0,0,0,0.7);
+    cursor: pointer;
+}
+
+.del-btn {
+    background-color: rgb(184, 55, 55);
+}
+
+.move-btn {
+    background-color: rgb(46, 49, 224);
+}
+
+.todo-container * .time {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2% 2% 0% 1%;
+    font-size: 80%;
+    color: beige;
+}
+
+.cal-container, .add-task {
+    margin-left: 30%;
+  }
+
+.add-task {
+    padding-top: 1.3em;
+}
+
+
+td {
+    text-align: center;
+    font-size: 1.3em;
+    border-color: white;
+    border-radius : 0.5em;
+}
+
+
+.cal-body * td {
+    cursor: pointer;
+    width: 2.1em;
+    height: 2.1em;
+    background:white;
+    background-color: rgba( 255, 255, 255, 0.3 );
+}
+
+.cal-body * .selected-day {
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(42, 175, 120);
+}
+
+tr td:nth-child(1){
+    color: red;
+ }
+ tr td:nth-child(7){
+    color: blue;
+ }
+ 
+.main {
+    width: auto;
+    font-size: 2.1em;
+}
+
+.previous-btn, .next-btn {
+    background-color: rgba( 255, 255, 255, 0.5 );    
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 1.6em;
+    height: 1.6em;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+
+
+input {
+    margin:0;
+    color: #fff;
+    font-size: 1.8rem;
+    border: none;
+    text-align: center;
+    background-color:transparent;
+    border-bottom: 2px solid #fff;
+    border-color: rgba( 255, 255, 255, 0.4 );
+}
+input::placeholder {
+    color:white;
+}
+
+.naming-item > input {
+    height: 60px;
+    width: 300px;
+}
+
+.add-task>input {
+    height: 3rem;
+    width: 13rem;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    tp {
+        opacity: 1;
+    }
+}

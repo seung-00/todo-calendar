@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>todo</title> 
+       <meta charset='utf-8' />
+       <link rel='stylesheet'
+       href='src/style.css'/>
+    </head>
+    
+    <body>
+        <div class="preloader">
+            <img src="./img/spinner.svg" alt="spinner">
+        </div>
+        <div class='top-row'>
+            <div class='top-right'>
+                <div class='weather-top'>
+                    <div class ='temperature'>
+                    </div>
+                </div>
+                <div class='weather-bottom'>
+                    <div class='location'>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='top-wrap'>
+            <div class ='clock-contaniner'>
+                    <div class= 'clock-item'>00:00</div>
+            </div>
+            <div class='greeting-container'>
+                <form class='naming-item'>
+                    <input type='text' placeholder='What is your name?'>
+                </form>
+                <h5 class='greeting-item'></h5>
+            </div>
+        </div>
+        
+
+        <div class='center-above'>
+        </div>
+
+        <div class='center-wrap'>
+            <div class='left-side'>
+                <div class='cal-container'>
+                    <table class='cal-table'>
+                        <thead class='tab-list'>
+                          <td class='previous' colspan='1'>
+                          <input type='button' class='previous-btn' value='<'>
+                          </td>
+                          <th class='main' colspan='5'>
+                          </td>
+                          <td class='next' colspan='1'>
+                            <input type='button' class='next-btn' value='>'>
+                          </td>
+                        </thead>
+                        <tr>
+                          <td>Sun</td>
+                          <td>Mon</td>
+                          <td>Tue</td>
+                          <td>Wed</td>
+                          <td>Thu</td>
+                          <td>Fri</td>
+                          <td>Sat</td>
+                        </tr>
+                        <tbody class='cal-body'>
+                        </tbody>
+                    </table>
+                </div>
+                  <form class='add-task'>
+                    <input type='text' placeholder='Add task!' autocomplete='off'>
+                </form>          
+            </div>
+            
+            <div class='right-side'>
+                <div class='todo-container'>
+                    <div class='daily'>
+                        <h1>daily</h1>
+                        <span class='curdate'></span>
+                        <ul class='daily-todo'>
+                        </ul>
+                    </div>
+                    <div class='delayed'>
+                        <h1>delayed</h1>
+                        <ul class='delayed-todo'>
+                        </ul>     
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+
+        <script src='src/preloader.js'></script>
+        <script src='src/bg.js'></script>
+        <script src='src/clock.js'></script>
+        <script src='src/greeting.js'></script>
+        <script src='src/weather.js'></script>
+        <script src='src/calendar.js'></script>
+        <script src='src/todo.js'></script>
+        
+    </body>
+</html>
