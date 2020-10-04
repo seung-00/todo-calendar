@@ -19,6 +19,27 @@ const updateDailyTD  = () => {
 }
 
 /**
+ * Parses daily ToDo to the DOM
+ */
+const parseDailyTD = () => {
+    let todayTDs = dailyTDMaps.get(convertDateToKey(curDate));
+    if (todayTDs) {
+        todayTDs.forEach((value, key) => {
+            addTDToDOM(key, value, 'daily');
+        });
+    }
+}
+
+/** 
+ * Run set of tasks for synchronizing to-do when the date changes.
+ */
+const syncTDToDate = () => {
+    updateDailyTD();
+    parseDailyTD();
+    selectCalByDate();
+}
+
+/**
  * Parses delayed ToDo to the DOM
  */
 const parseDelayedTD = () => {
@@ -40,18 +61,6 @@ const clearTDDom = (ToDoList) => {
 }
 
 /**
- * Parses daily ToDo to the DOM
- */
-const parseDailyTD = () => {
-    let todayTDs = dailyTDMaps.get(convertDateToKey(curDate));
-    if (todayTDs) {
-        todayTDs.forEach((value, key) => {
-            addTDToDOM(key, value, 'daily');
-        });
-    }
-}
-
-/**
  * Handles click event of calBody elements (date)
  * @param {Event} e
  */
@@ -65,9 +74,7 @@ const handleClickDate = (e) => {
     unselectDay();
     clearTDDom(dailyTDList);
     curDate = convertKeyToDate(e.target.classList[0]); // updates curDate
-    updateDailyTD();
-    selectCalByDate();
-    parseDailyTD();
+    syncTDToDate();
 }
 
 const clickDate = () => {
@@ -306,10 +313,8 @@ const submitTD = () => {
 
 const TDInit = () => {
     loadTDFromLS();
-    selectCalByDate();
-    updateDailyTD();
+    syncTDToDate();
     parseDelayedTD();
-    parseDailyTD();
     clickDate();
     submitTD();
 }

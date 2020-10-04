@@ -115,9 +115,7 @@ const handleMoveMonth = (e) => {
     }
 
     buildCalendar();
-    selectCalByDate();
-    updateDailyTD();
-    parseDailyTD()
+    syncTDToDate();
 }
 
 const calendarInit = () => {
