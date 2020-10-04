@@ -16,7 +16,6 @@ let dailyTDMaps = new Map(),
 const updateDailyTD  = () => {   
     let span = dailyContainer.querySelector('span');
     span.innerText = `${curDate.getMonth()+1}/${curDate.getDate()}`;
-    parseDailyTD();
 }
 
 /**
@@ -62,7 +61,7 @@ const handleClickDate = (e) => {
     if (!e.target.className) {
         return;
     }
-
+    
     unselectDay();
     clearTDDom(dailyTDList);
     curDate = convertKeyToDate(e.target.classList[0]); // updates curDate
@@ -203,7 +202,7 @@ const createToDo = (key, value) => {
 
     spanValue.innerText = value;
     spanValue.className = 'value';
-    spanDate.innerText = `${ curDate.getMonth()  }.${ curDate.getDate() }.${ yearDigits }`;
+    spanDate.innerText = `${ curDate.getMonth() +1 }.${ curDate.getDate() }.${ yearDigits }`;
     spanDate.className = 'time';
 
     delBtn.className = 'del-btn';
@@ -310,6 +309,7 @@ const TDInit = () => {
     selectCalByDate();
     updateDailyTD();
     parseDelayedTD();
+    parseDailyTD();
     clickDate();
     submitTD();
 }
