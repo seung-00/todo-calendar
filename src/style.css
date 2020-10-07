@@ -6,7 +6,6 @@ html, body {
 body {
     font-family: -apple-system,Arial, Helvetica, sans-serif;
     color: white;   
-    overflow: hidden; 
 }
 
 .preloader {
@@ -14,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background: rgb(23, 22, 22);
     position: fixed;
     top: 0;
@@ -29,16 +28,15 @@ body {
 }
 
 .bgImage{
-    min-height: 100%;
-    min-width: 1024px;
-    width: 100%;
-    height: auto;
+    height: 100vh;
+    width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
     animation: fadeIn .5s linear;
 }
+
 
 .top-row {
     display: flex;
@@ -79,7 +77,7 @@ body {
 .naming-item,
 .greeting-item {
     display: none;
-    font-size: 2.9em;
+    font-size: 3.7vw;
 }    
 
 /* 캐스캐이딩으로 display: none 무시 */
@@ -115,7 +113,7 @@ body {
 }
 
 .center-above {
-    height: 5%;
+    height: 1vh;
 }
 
 .center-wrap {
@@ -156,7 +154,7 @@ body {
     color: white;
     background-color: white;
     background-color: rgba( 255, 255, 255, 0.4 );
-    border-radius : 8px;
+    border-radius : 2vw;
 }
 
 .todo-container * h1 {
@@ -173,7 +171,7 @@ body {
 
 .daily>span {
     color: #9be4b6;
-    font-size: 2.3em;
+    font-size: 5vh;
     font-weight: bold;
 }
 
@@ -181,12 +179,13 @@ body {
     display:flex;
     flex-direction: row;
     flex-flow: wrap;
+    width: auto;
 }
 
 
 .todo-container * li > .value {
-    margin-right: 0.5em;
-    font-size: 120%;
+    margin-right: 1vw;
+    font-size: 1.8vw;
     color: white;
     font-weight: bold;
     border: none;
@@ -194,14 +193,14 @@ body {
 }
 
 .todo-container * li > button {
-    /* font-size: 5%; */
     flex: 0 1 auto;
-    margin: 0.5em 0.25em 0;
-    width: 1em;
-    height: 1em;
+    padding: 0 !important;
+    margin: 0.5vw 0.25vw 0;
+    width: 1.5vw;
+    height: 1.5vw;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 0.01em 0.02em 0 rgba(0,0,0,0.7);
+    box-shadow: 0 0.5vw 0.8vw 0 rgba(0,0,0,0.5);
     cursor: pointer;
 }
 
@@ -225,30 +224,30 @@ body {
   }
 
 .add-task {
-    padding-top: 1.3em;
+    padding-top: 1vw;
 }
 
 
 td {
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.5vw;
     border-color: white;
-    border-radius : 0.5em;
+    border-radius : 0.5vw;
 }
 
 
 .cal-body * td {
     cursor: pointer;
-    width: 2.1em;
-    height: 2.1em;
+    width: 3.5vw;
+    height: 3.5vw;
+    font-weight: bold;
     background:white;
     background-color: rgba( 255, 255, 255, 0.3 );
 }
 
 .cal-body * .selected-day {
-    font-size: 1.5em;
+    font-size: 2vw;
     color: white;
-    font-weight: bold;
     background-color: rgb(42, 175, 120);
 }
 
@@ -261,17 +260,18 @@ tr td:nth-child(1){
  
 .main {
     width: auto;
-    font-size: 2.1em;
+    font-size: 2.6vw;
 }
 
 .previous-btn, .next-btn {
-    background-color: rgba( 255, 255, 255, 0.5 );    
-    font-size: 0.9em;
+    background-color: rgba( 255, 255, 255, 0 ) !important;
+    font-size: 1.5vw;
+    text-align: center;
     font-weight: bold;
-    width: 1.6em;
-    height: 1.6em;
+    width: 3.5vw;
+    height: 3.5vw;
     border: none;
-    border-radius: 0.3em;
+    border-radius: 100%;
     cursor: pointer;
 }
 
@@ -279,25 +279,26 @@ tr td:nth-child(1){
 input {
     margin:0;
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 2.8vw;
     border: none;
     text-align: center;
     background-color:transparent;
-    border-bottom: 2px solid #fff;
+    border-bottom: 0.2vw solid #fff;
     border-color: rgba( 255, 255, 255, 0.4 );
 }
+
 input::placeholder {
     color:white;
 }
 
 .naming-item > input {
-    height: 60px;
-    width: 300px;
+    height: 5vw;
+    width: 30vw;
 }
 
 .add-task>input {
-    height: 3rem;
-    width: 13rem;
+    height: 5vw;
+    width: 20vw;
 }
 
 
@@ -308,4 +309,132 @@ input::placeholder {
     tp {
         opacity: 1;
     }
+}
+
+@media (max-width: 400px) {
+    body {
+        background-color: #0b351a;
+    }
+    .top-row {
+        display: none;
+    }
+    .bgImage {
+        display: none;
+    }
+    .clock-contaniner   {
+        display: none;
+    }
+
+    .daily>span {
+        font-size: 5vw;
+    }
+
+    .naming-item,
+    .greeting-item {
+        font-size: 5vh;
+    }
+
+    .center-wrap {
+        flex-direction: column;
+    }
+
+    .cal-container, .add-task {
+        margin: 0 auto;
+      }    
+      
+    .cal-body * td {
+        width: 5vh;
+        height: 5vh;
+    }
+    
+    td {
+        font-size: 2.5vh;
+    }
+
+    .previous-btn, .next-btn {
+        font-size: 2vh;
+    }
+        
+    
+    
+    .cal-body * .selected-day {
+        font-size: 8vw;
+    }
+
+    h1 {
+        font-size: 3.5vh;
+    }
+
+    .main {
+        width: auto;
+        font-size: 2.6vh;
+    }
+ 
+
+    .left-side, .right-side {
+        flex: none;
+        margin: 0;
+    }
+
+    .greeting-item {
+        height: 5vh;
+    }
+
+    .left-side {
+        height: 45vh;
+    }
+
+    .right-side {
+        height: 50vh;
+    }
+
+
+    .todo-container {
+        display: flex;
+        flex-direction: row;    
+        width: 80%;
+        height: auto;
+    }
+    .daily, .delayed {
+        flex: 1;
+        margin: 3vh 2vw 0 2vw;
+        width: 20vw;
+        min-height: 30vh;
+        color: white;
+        background-color: white;
+        background-color: rgba( 255, 255, 255, 0.4 );
+        border-radius: 2vw;
+    }
+
+    .todo-container * li > .value {
+        font-size: 2.5vh;
+        padding-right: 1.5vw;
+    }
+
+    .time {
+        display: none;
+    }
+
+    .todo-container * li > button {
+        width: 1.5vh;
+        height: 1.5vh;
+        border-radius: 50%;
+    }
+
+    ul {
+        padding-inline-start: 5vw;
+    }
+
+    .add-task>input {
+        font-size: 3.5vh;
+        width: auto;
+        padding: 2vh 0 1vh 0;
+    }   
+
+    input::placeholder {
+        color:white;
+        text-align: left;
+        padding-right: auto;
+    }
+    
 }
