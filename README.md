@@ -20,3 +20,4 @@
 * Save names and tasks
   * Datas you put are stored in your local storage.
   * To-do items are managed as hashmaps.
+* Reactive design.
