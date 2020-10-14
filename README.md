@@ -1,6 +1,8 @@
 # To Do List 
 
 > [demo page](http://osean.iptime.org:5400/)
+>
+> The server runs from 11:00 to 23:00 KST
 
 * Simple to do list.
 
@@ -21,3 +23,4 @@
   * Datas you put are stored in your local storage.
   * To-do items are managed as hashmaps.
 * Reactive design.
+
