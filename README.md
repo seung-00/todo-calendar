@@ -1,8 +1,6 @@
 # To Do List 
 
-> [demo page](http://osean.iptime.org:5400/)
->
-> The server runs from 11:00 to 23:00 KST
+> [demo page](https://seung-00.github.io/todo_list/)
 
 * Simple to do list.
 
