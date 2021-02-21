@@ -1,8 +1,8 @@
-# To Do List 
+# To Do Calendar
 
-> [demo page](https://seung-00.github.io/todo_list/)
+> [demo page](https://seung-00.github.io/todo-calendar/)
 
-* Simple to do list.
+* Simple to do list & calendar
 
 * No front-end framework used, pure js (ES6)
 
